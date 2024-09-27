@@ -30,3 +30,11 @@ export const UserData = [
     userLost: 234,
   },
 ];
+
+export default function Data() {
+  return (
+    <div className="bg-white dark:bg-gray-300 w-11/12 m-auto rounded-lg mt-20 pb-10">
+      <h1 className="text-3xl font-bold text-center">Data</h1> 
+    </div>
+  );
+}
