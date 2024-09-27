@@ -11,7 +11,7 @@ export default function Home() {
     datasets: [
       {
         label: "Populasi",
-        data: UserData.map((data) => data.userGain),
+        data: UserData.map((data) => data.population),
         backgroundColor: [
           "rgba(75,192,192,1)",
           "#ecf0f1",
@@ -30,7 +30,7 @@ export default function Home() {
     datasets: [
       {
         label: "Pertumbuhan",
-        data: UserData.map((data) => data.userGain),
+        data: UserData.map((data) => data.growthRate),
         backgroundColor: [
           "rgba(75,192,192,1)",
           "#ecf0f1",
@@ -49,7 +49,7 @@ export default function Home() {
     datasets: [
       {
         label: "Kepadatan",
-        data: UserData.map((data) => data.userGain),
+        data: UserData.map((data) => data.density),
         backgroundColor: [
           "rgba(75,192,192,1)",
           "#ecf0f1",

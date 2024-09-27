@@ -16,27 +16,43 @@ export default function Table() {
                 year
               </th>
               <th className={`border border-gray-300 font-medium p-4 pb-3   `}>
-                userGain
+                population
               </th>
               <th className={`border border-gray-300 font-medium p-4 pb-3   `}>
-                userLost
+                density
+              </th>
+              <th className={`border border-gray-300 font-medium p-4 pb-3   `}>
+                growthRate
               </th>
             </tr>
           </thead>
           <tbody>
             {UserData?.map((item) => (
               <tr key={item.id} className="text-center">
-                <td className={`border border-gray-300 p-4 text-slate-500 dark:border-white`}>
+                <td
+                  className={`border border-gray-300 p-4 text-slate-500 dark:border-white`}
+                >
                   <p>{item.id}</p>
                 </td>
-                <td className={`border border-gray-300 p-4 text-slate-500  dark:border-white`}>
+                <td
+                  className={`border border-gray-300 p-4 text-slate-500  dark:border-white`}
+                >
                   <p>{item.year}</p>
                 </td>
-                <td className={`border border-gray-300 p-4 text-slate-500  dark:border-white`}>
-                  <p>{item.userGain}</p>
+                <td
+                  className={`border border-gray-300 p-4 text-slate-500  dark:border-white`}
+                >
+                  <p>{item.population}</p>
                 </td>
-                <td className={`border border-gray-300 p-4 text-slate-500  dark:border-white`}>
-                  <p> {item.userLost}</p>
+                <td
+                  className={`border border-gray-300 p-4 text-slate-500  dark:border-white`}
+                >
+                  <p> {item.density}</p>
+                </td>
+                <td
+                  className={`border border-gray-300 p-4 text-slate-500  dark:border-white`}
+                >
+                  <p> {item.growthRate}%</p>
                 </td>
               </tr>
             ))}

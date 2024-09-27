@@ -46,7 +46,7 @@ export default function Menu() {
       <div>
         <div className="flex flex-row py-5 cursor-default">
           <p className="ui-font-serif font-semibold text-2xl text-center basis-1/6">
-            <FontAwesomeIcon icon={faPeopleRoof} className="text-2xl"/>
+            <FontAwesomeIcon icon={faPeopleRoof} className="text-2xl" />
           </p>
           <h3 className="ui-font-serif font-semibold text-xl basis-4/6">
             <Link href="/">
@@ -79,18 +79,18 @@ export default function Menu() {
         <div className="pt-4">
           <div className="toggledark">
             {/* Tombol untuk Dark Mode */}
-            <button
+            <div
               onClick={toggleDarkMode}
-              className={`px-6 py-2  text-white rounded-md ${
+              className={`w-full py-4 px-5  text-white hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all ease-in-out duration-300 cursor-pointer ${
                 dark ? "bg-transparent" : "bg-transparent"
               }`}
             >
               {dark ? (
-                <div className="flex flex-row items-center gap-4">
-                  <p className="basis-1/6 text-center">
+                <div className="flex items-center gap-4">
+                  <p className="">
                     <FontAwesomeIcon icon={faMoon} />
                   </p>
-                  <p className="basis-5/6">Dark</p>
+                  <p>Dark</p>
                 </div>
               ) : (
                 <div className="flex items-center gap-4">
@@ -98,9 +98,9 @@ export default function Menu() {
                   <p>Light</p>
                 </div>
               )}
-            </button>
+            </div>
           </div>
-          <div className="flex flex-row py-4 cursor-pointer">
+          <div className="flex flex-row py-4 cursor-pointer hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all duration-300">
             <p className="basis-1/6 text-center">
               <FontAwesomeIcon icon={faList} />
             </p>
@@ -108,12 +108,12 @@ export default function Menu() {
               Menu
             </Link>
           </div>
-          <div className="flex flex-row py-4 cursor-pointer">
+          <div className="flex flex-row py-4 cursor-pointer hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all duration-300">
             <p className="basis-1/6 text-center">
               <FontAwesomeIcon icon={faCompass} />
             </p>
             <Link href="/list" className="basis-5/6">
-              list sensor
+              Maps
             </Link>
           </div>
         </div>

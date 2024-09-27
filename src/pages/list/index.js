@@ -1,7 +1,7 @@
 import Map from "@components/Map";
+import { LocationData } from "../Data";
 
 const DEFAULT_CENTER = [-7.3797534, 109.2401397];
-const DEFAULT_MARKER = [-7.377049640788257, 109.24465090501957];
 
 export default function Home() {
   return (
@@ -12,15 +12,20 @@ export default function Home() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           />
-          <Marker position={DEFAULT_MARKER}>
-            <Popup>
-              <div>
-                Kejernihan&emsp;: 25,37037 <br />
-                Keasaman&emsp;: 21,9028 <br />
-                Jarak &emsp;&emsp;&emsp;: 31,586
-              </div>
-            </Popup>
-          </Marker>
+          {LocationData.map((location, index) => (
+            <Marker key={index} position={location.position}>
+              <Popup>
+                <div>
+                  <p className="font-bold">{location.name}</p>
+                  Kepadatan&emsp;&emsp;: {location.density.toLocaleString()}{" "}
+                  <br />
+                  Populasi&emsp;&emsp;&emsp;:{" "}
+                  {location.population.toLocaleString()} <br />
+                  Pertumbuhan &emsp;: {location.growth}%
+                </div>
+              </Popup>
+            </Marker>
+          ))}
         </>
       )}
     </Map>
