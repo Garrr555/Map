@@ -76,7 +76,7 @@ export default function Home() {
             Dashboard
           </p>
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-wrap">
           <div className="w-auto h-auto basis-1/4 m-auto">
             <LineChart chartData={userData} />
           </div>
