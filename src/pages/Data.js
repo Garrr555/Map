@@ -39,7 +39,7 @@ export const UserData = [
 export const LocationData = [
   {
     name: "Semarang",
-    position: [-6.9932, 110.4203], // Koordinat Semarang
+    position: [-6.9932, 110.4203],
     density: 9800,
     population: 1621000,
     growth: 1.22,
@@ -93,7 +93,6 @@ export const LocationData = [
     population: 260000,
     growth: 1.48,
   },
-
   {
     name: "Kendari",
     position: [-3.995276, 122.512974],
@@ -115,7 +114,141 @@ export const LocationData = [
     population: 860000,
     growth: 1.1,
   },
+  {
+    name: "Bali",
+    position: [-8.409518, 115.188919],
+    density: 3000,
+    population: 4500000,
+    growth: 1.3,
+  },
+  {
+    name: "Cirebon",
+    position: [-6.732207, 108.554077],
+    density: 12000,
+    population: 340000,
+    growth: 1.5,
+  },
+  {
+    name: "Banjarmasin",
+    position: [-3.3162, 114.5904],
+    density: 5200,
+    population: 700000,
+    growth: 1.15,
+  },
+  {
+    name: "Samarinda",
+    position: [-0.5022, 117.1452],
+    density: 4000,
+    population: 850000,
+    growth: 1.2,
+  },
+  {
+    name: "Tangerang",
+    position: [-6.174465, 106.632248],
+    density: 16000,
+    population: 2500000,
+    growth: 1.4,
+  },
+  {
+    name: "Depok",
+    position: [-6.3993, 106.7981],
+    density: 17000,
+    population: 2000000,
+    growth: 1.7,
+  },
+  {
+    name: "Yogyakarta",
+    position: [-7.7956, 110.3695],
+    density: 12000,
+    population: 400000,
+    growth: 1.0,
+  },
+  {
+    name: "Bandung",
+    position: [-6.914744, 107.60981],
+    density: 14450,
+    population: 2585000,
+    growth: 1.11,
+  },
+  {
+    name: "Surakarta",
+    position: [-7.5586, 110.8261],
+    density: 7000,
+    population: 600000,
+    growth: 1.3,
+  },
+  {
+    name: "Batam",
+    position: [1.1022, 104.1185],
+    density: 10000,
+    population: 1300000,
+    growth: 1.8,
+  },
+  {
+    name: "Medan",
+    position: [3.5952, 98.6722],
+    density: 8700,
+    population: 2300000,
+    growth: 1.5,
+  },
+  {
+    name: "Denpasar",
+    position: [-8.6705, 115.212],
+    density: 7500,
+    population: 900000,
+    growth: 1.3,
+  },
+  {
+    name: "Pontianak",
+    position: [-0.0211, 109.3315],
+    density: 4000,
+    population: 600000,
+    growth: 1.25,
+  },
+  {
+    name: "Jambi",
+    position: [-1.6075, 103.6141],
+    density: 5500,
+    population: 600000,
+    growth: 1.2,
+  },
+  {
+    name: "Bengkulu",
+    position: [-3.7934, 102.2654],
+    density: 4800,
+    population: 400000,
+    growth: 1.1,
+  },
+  {
+    name: "Kupang",
+    position: [-10.1667, 123.6056],
+    density: 2500,
+    population: 400000,
+    growth: 1.3,
+  },
+  {
+    name: "Ambon",
+    position: [-3.695, 128.1881],
+    density: 3500,
+    population: 250000,
+    growth: 1.0,
+  },
+  {
+    name: "Tual",
+    position: [-5.6757, 132.7486],
+    density: 3000,
+    population: 150000,
+    growth: 1.2,
+  },
+  {
+    name: "Sukabumi",
+    position: [-6.9303, 106.9272],
+    density: 7000,
+    population: 300000,
+    growth: 1.5,
+  },
 ];
+
 
 
 export default function Data() {

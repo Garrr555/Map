@@ -84,20 +84,23 @@ export default function Menu({menuVisible}) {
             {/* Tombol untuk Dark Mode */}
             <div
               onClick={toggleDarkMode}
-              className={`w-full py-4 px-5  text-white hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all ease-in-out duration-300 cursor-pointer ${
+              className={`w-full py-4 px-4  text-white hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all ease-in-out duration-300 cursor-pointer ${
                 dark ? "bg-transparent" : "bg-transparent"
               }`}
             >
               {dark ? (
                 <div className="flex items-center gap-4">
-                  <p className="">
+                  <p className="text-xl">
                     <FontAwesomeIcon icon={faMoon} />
                   </p>
                   <p>Dark</p>
                 </div>
               ) : (
-                <div className="flex items-center gap-4">
-                  <FontAwesomeIcon icon={faSun} />
+                <div className="flex items-center gap-3">
+                  <p className="text-xl">
+                    <FontAwesomeIcon icon={faSun} />
+                  </p>
+
                   <p>Light</p>
                 </div>
               )}
@@ -108,7 +111,7 @@ export default function Menu({menuVisible}) {
               <FontAwesomeIcon icon={faList} />
             </p>
             <Link href="/" className="basis-5/6">
-              Menu
+              Dashboard
             </Link>
           </div>
           <div className="flex flex-row py-4 cursor-pointer hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all duration-300">
