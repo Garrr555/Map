@@ -3,9 +3,11 @@ import { Provider } from "src/context/store";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Provider>
-      <Component {...pageProps} />
-    </Provider>
+    <div classname="">
+      <Provider>
+        <Component {...pageProps} />
+      </Provider>
+    </div>
   );
 }
 

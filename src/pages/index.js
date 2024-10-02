@@ -6,6 +6,8 @@ import { UserData } from "./Data";
 import { useState } from "react";
 
 export default function Home() {
+  const [menuVisible, setMenuVisible] = useState(false);
+  const [marginClass, setMarginClass] = useState("");
   const [userData, setUserData] = useState({
     labels: UserData.map((data) => data.year),
     datasets: [
@@ -66,11 +68,14 @@ export default function Home() {
   const [userData3, setUserData3] = useState(false);
   return (
     <div
-      style={{ width: "100%", height: "100vh" }}
-      className="w-auto h-auto flex dark:bg-gray-300"
+      style={{ width: "100%", height: "100%" }}
+      className={`w-auto h-auto flex dark:bg-gray-300 ${marginClass} ${
+        menuVisible ? "" : "pl-0"
+      }`} // Gunakan marginClass dan hilangkan ml-[390px] jika menu tidak terlihat
     >
-      <Menu></Menu>
-      <div className="w-full">
+      {menuVisible && <Menu menuVisible={setMenuVisible} />}
+
+      <div className="w-full h-full pb-52">
         <div className="mb-10">
           <p className="text-3xl font-semibold pt-10 text-center text-current text-gray-500 dark:text-secondary">
             Dashboard
@@ -87,10 +92,9 @@ export default function Home() {
             <LineChart chartData={userData2} />
           </div>
         </div>
-        <Table></Table>
+        <Table ></Table>
       </div>
-
-      <Menubar></Menubar>
+      <Menubar menuVisible={setMenuVisible} margin={setMarginClass}></Menubar>
     </div>
   );
 }

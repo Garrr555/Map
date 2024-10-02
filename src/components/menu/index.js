@@ -12,7 +12,7 @@ import {
 import { useContext, useState, useEffect } from "react";
 import { Contex } from "src/context/store";
 
-export default function Menu() {
+export default function Menu({menuVisible}) {
   const { menus, setMenu } = useContext(Contex);
   const [dark, setDark] = useState(false);
 
@@ -41,14 +41,14 @@ export default function Menu() {
 
   return (
     <div
-      className={`w-96 h-screen text-slate-100 h-auto bg-primary dark:bg-dark ${menus}`}
+      className={`w-72 h-screen text-slate-100 bg-primary dark:bg-dark ${menus} fixed top-0 left-0 z-10`}
     >
       <div>
-        <div className="flex flex-row py-5 cursor-default">
+        <div className="flex flex-row py-5 cursor-default text-2xl">
           <p className="ui-font-serif font-semibold text-2xl text-center basis-1/6">
             <FontAwesomeIcon icon={faPeopleRoof} className="text-2xl" />
           </p>
-          <h3 className="ui-font-serif font-semibold text-xl basis-4/6">
+          <h3 className="ui-font-serif font-semibold  basis-4/6">
             <Link href="/">
               <span className="pr-2">1</span>
               <span className="pr-2">P</span>
@@ -59,7 +59,10 @@ export default function Menu() {
             </Link>
           </h3>
           <svg
-            onClick={() => setMenu("hidden")}
+            onClick={() => {
+              setMenu("hidden");
+              menuVisible(false);
+            }}
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
             viewBox="0 0 384 512"
@@ -76,7 +79,7 @@ export default function Menu() {
 
         <hr />
 
-        <div className="pt-4">
+        <div className="pt-4 text-xl">
           <div className="toggledark">
             {/* Tombol untuk Dark Mode */}
             <div
