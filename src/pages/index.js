@@ -92,9 +92,11 @@ export default function Home() {
             <LineChart chartData={userData2} />
           </div>
         </div>
-        <Table ></Table>
+        <Table></Table>
       </div>
-      <Menubar menuVisible={setMenuVisible} margin={setMarginClass}></Menubar>
+      <div className={`${menuVisible ? "hidden" : ""}`}>
+        <Menubar menuVisible={setMenuVisible} margin={setMarginClass}></Menubar>
+      </div>
     </div>
   );
 }

@@ -8,7 +8,7 @@ export default function Menubar({ margin, menuVisible }) {
   return (
     <div
       className={`fixed top-8 right-8 cursor-pointer p-4 z-10 bg-white rounded-md ${
-        menus === "hidden" ? "" : "hidden"
+        menus ? "" : "hidden"
       }`}
       onClick={() => {
         setMenu("block");
