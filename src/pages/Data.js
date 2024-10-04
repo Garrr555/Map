@@ -129,6 +129,13 @@ export const LocationData = [
     growth: 1.5,
   },
   {
+    name: "Nusakambangan",
+    position: [-7.7333, 108.4878],
+    density: 12000,
+    population: 340000,
+    growth: 1.5,
+  },
+  {
     name: "Banjarmasin",
     position: [-3.3162, 114.5904],
     density: 5200,

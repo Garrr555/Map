@@ -12,7 +12,7 @@ import {
 import { useContext, useState, useEffect } from "react";
 import { Contex } from "src/context/store";
 
-export default function Menu({menuVisible}) {
+export default function Menu({ menuVisible }) {
   const { menus, setMenu } = useContext(Contex);
   const [dark, setDark] = useState(false);
 
