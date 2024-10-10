@@ -10,7 +10,7 @@ const Map = (props) => {
   return (
     <div
       style={{ width: "100%", height: "100vh" }}
-      className="flex w-auto h-auto"
+      className="flex w-auto h-auto bg-primary dark:bg-dark text-white"
     >
       <Menu />
       <DynamicMap {...props} className={"z-0"} />

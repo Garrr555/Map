@@ -11,10 +11,19 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useState, useEffect } from "react";
 import { Contex } from "src/context/store";
+import { ThemeContext } from "src/context/themeContext";
+
+const themes = [
+  { value: "osm", label: "OpenStreetMap" },
+  { value: "dark", label: "Dark Mapbox" },
+  { value: "light", label: "Light Mapbox" },
+  { value: "stamen", label: "Stamen Terrain" },
+];
 
 export default function Menu({ menuVisible }) {
   const { menus, setMenu } = useContext(Contex);
   const [dark, setDark] = useState(false);
+   const { theme, setTheme } = useContext(ThemeContext);
 
   // Fungsi untuk toggle dark mode
   const toggleDarkMode = () => {
@@ -38,6 +47,11 @@ export default function Menu({ menuVisible }) {
   useEffect(() => {
     localStorage.setItem("dark-mode", dark);
   }, [dark]);
+
+  const handleThemeChange = (event) => {
+    setTheme(event.target.value); // Mengatur tema baru
+  };
+
 
   return (
     <div
@@ -114,13 +128,25 @@ export default function Menu({ menuVisible }) {
               Dashboard
             </Link>
           </div>
-          <div className="flex flex-row py-4 cursor-pointer hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all duration-300">
+          <div className="group flex flex-row items-center py-4 cursor-pointer hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all duration-300">
             <p className="basis-1/6 text-center">
               <FontAwesomeIcon icon={faCompass} />
             </p>
-            <Link href="/list" className="basis-5/6">
+            <Link href="/list" className="basis-1/6">
               Maps
             </Link>
+            <select
+              id="theme"
+              value={theme}
+              onChange={handleThemeChange}
+              className="w-full py-2 px-3 bg-transparent dark:bg-transparent transition-all duration-300 text-white basis-4/6 group-hover:text-primary dark:group-hover:text-dark outline-none border-none focus:ring-0 appearance-none"
+            >
+              {themes.map((theme, i) => (
+                <option className="bg-white text-dark  dark:bg-gray-300" key={i} value={theme.value}>
+                  {theme.label}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 export default function Legen() {
   return (
-    <div className="fixed bottom-8 right-8 w-60 p-4 z-10 bg-white rounded-md shadow-lg">
+    <div className="fixed bottom-8 right-8 w-60 p-4 z-10 text-white bg-primary dark:bg-dark rounded-md shadow-lg">
       <div className="flex my-1">
         <div>12,567</div> {/* Data Kepadatan Palsu */}
         <p className="ml-auto">Kepadatan (jiwa/km²)</p>
