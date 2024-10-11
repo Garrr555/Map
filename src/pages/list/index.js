@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <Map
-      className={"w-auto h-auto "}
+      className={"w-full h-auto"}
       center={DEFAULT_CENTER}
       zoom={16}
       theme={theme}
