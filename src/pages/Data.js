@@ -34,6 +34,27 @@ export const UserData = [
     density: 13200,
     growthRate: 1.3,
   },
+  {
+    id: 6,
+    year: 2021,
+    population: 26000000,
+    density: 13400,
+    growthRate: 1.4,
+  },
+  {
+    id: 7,
+    year: 2022,
+    population: 26510000,
+    density: 13550,
+    growthRate: 1.34,
+  },
+  {
+    id: 8,
+    year: 2023,
+    population: 27020000,
+    density: 13700,
+    growthRate: 1.35,
+  },
 ];
 
 export const LocationData = [
@@ -255,8 +276,6 @@ export const LocationData = [
     growth: 1.5,
   },
 ];
-
-
 
 export default function Data() {
   return (

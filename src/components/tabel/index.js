@@ -4,7 +4,7 @@ import Button from "@components/buttontable";
 export default function Table() {
   return (
     <div className="bg-white dark:bg-gray-300 w-11/12 m-auto rounded-lg mt-20 pb-10">
-      <Button></Button>
+      {/* <Button></Button> */}
       <div className="wrapper mt-5">
         <table className={`border-collapse table-auto text-sm w-11/12 m-auto`}>
           <thead className="blue2 text-slate-100 dark:bg-dark">

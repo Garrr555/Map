@@ -23,7 +23,7 @@ const themes = [
 export default function Menu({ menuVisible }) {
   const { menus, setMenu } = useContext(Contex);
   const [dark, setDark] = useState(false);
-   const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(ThemeContext);
 
   // Fungsi untuk toggle dark mode
   const toggleDarkMode = () => {
@@ -52,17 +52,16 @@ export default function Menu({ menuVisible }) {
     setTheme(event.target.value); // Mengatur tema baru
   };
 
-
   return (
     <div
-      className={`w-72 h-screen text-slate-100 bg-primary dark:bg-dark ${menus} fixed top-0 left-0 z-10`}
+      className={`w-72 h-screen text-slate-100 bg-primary dark:bg-dark ${menus} fixed top-0 left-0 z-10 overflow-hidden`}
     >
       <div>
-        <div className="flex flex-row py-5 cursor-default text-2xl">
+        <div className="flex flex-row py-5 cursor-default text-2xl text-dark dark:text-primary">
           <p className="ui-font-serif font-semibold text-2xl text-center basis-1/6">
-            <FontAwesomeIcon icon={faPeopleRoof} className="text-2xl" />
+            <FontAwesomeIcon icon={faPeopleRoof} className="text-3xl" />
           </p>
-          <h3 className="ui-font-serif font-semibold  basis-4/6">
+          <h3 className="ui-font-serif font-semibold  basis-4/6 ">
             <Link href="/">
               <span className="pr-2">1</span>
               <span className="pr-2">P</span>
@@ -98,51 +97,62 @@ export default function Menu({ menuVisible }) {
             {/* Tombol untuk Dark Mode */}
             <div
               onClick={toggleDarkMode}
-              className={`w-full py-4 px-4  text-white hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all ease-in-out duration-300 cursor-pointer ${
+              className={`group w-full py-4 text-white hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all ease-in-out duration-300 cursor-pointer ${
                 dark ? "bg-transparent" : "bg-transparent"
               }`}
             >
               {dark ? (
-                <div className="flex items-center gap-4">
-                  <p className="text-xl">
+                <div className="flex flex-row items-center transition-all duration-300 ease-in-out group-hover:translate-x-2">
+                  <p className="basis-1/6 text-center">
                     <FontAwesomeIcon icon={faMoon} />
                   </p>
-                  <p>Dark</p>
+
+                  <p className="basis-5/6">Dark</p>
                 </div>
               ) : (
-                <div className="flex items-center gap-3">
-                  <p className="text-xl">
+                <div className="flex items-center flex-row transition-all duration-300 ease-in-out group-hover:translate-x-2">
+                  <p className="basis-1/6 text-center">
                     <FontAwesomeIcon icon={faSun} />
                   </p>
 
-                  <p>Light</p>
+                  <p className="basis-5/6">Light</p>
                 </div>
               )}
             </div>
           </div>
-          <div className="flex flex-row py-4 cursor-pointer hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all duration-300">
-            <p className="basis-1/6 text-center">
+          <div className="group flex flex-row py-4 cursor-pointer hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all duration-300">
+            <p className="basis-1/6 text-center transition-all duration-300 ease-in-out group-hover:translate-x-2">
               <FontAwesomeIcon icon={faList} />
             </p>
-            <Link href="/" className="basis-5/6">
+            <Link
+              href="/"
+              className="basis-5/6 transition-all duration-300 ease-in-out group-hover:translate-x-2"
+            >
               Dashboard
             </Link>
           </div>
           <div className="group flex flex-row items-center py-4 cursor-pointer hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all duration-300">
-            <p className="basis-1/6 text-center">
+            <p className="basis-1/6 text-center transition-all duration-300 ease-in-out group-hover:translate-x-2">
               <FontAwesomeIcon icon={faCompass} />
             </p>
-            <Link href="/list" className="basis-1/6">
+            <Link
+              href="/list"
+              className="basis-1/6 transition-all duration-300 ease-in-out group-hover:translate-x-2"
+            >
               Maps
             </Link>
             <select
               id="theme"
               value={theme}
               onChange={handleThemeChange}
-              className="w-full py-2 px-3 bg-transparent dark:bg-transparent transition-all duration-300 text-white basis-4/6 group-hover:text-primary dark:group-hover:text-dark outline-none border-none focus:ring-0 appearance-none"
+              className=" ease-in-out group-hover:translate-x-2 w-full py-2 px-3 bg-transparent dark:bg-transparent transition-all duration-300 text-white basis-4/6  outline-none border-none focus:ring-0 appearance-none"
             >
               {themes.map((theme, i) => (
-                <option className="bg-white text-dark  dark:bg-gray-300" key={i} value={theme.value}>
+                <option
+                  className="bg-white text-dark  dark:bg-gray-300 "
+                  key={i}
+                  value={theme.value}
+                >
                   {theme.label}
                 </option>
               ))}
