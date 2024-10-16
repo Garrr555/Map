@@ -67,8 +67,8 @@ export const LocationData = [
   },
   {
     name: "Purwokerto",
-    position: [-7.3788034, 109.2452397],
-    density: 15000,
+    position: [-7.423919438, 109.2306665],
+    density: 1500,
     population: 1800500,
     growth: 1.25,
   },

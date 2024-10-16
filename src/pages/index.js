@@ -71,9 +71,9 @@ export default function Home() {
   return (
     <div
       style={{ width: "100%", height: "100%" }}
-      className={`w-auto h-auto flex dark:bg-gray-300  ${
+      className={`w-auto h-auto flex  dark:bg-gray-300 overflow-hidden transition-all duration-300 ease-in-out  ${
         menuVisible ? marginClass : "pl-0"
-      }`} // Gunakan marginClass dan hilangkan ml-[390px] jika menu tidak terlihat
+      }`}
     >
       {menuVisible && <Menu menuVisible={setMenuVisible} />}
 

@@ -54,7 +54,7 @@ export default function Menu({ menuVisible }) {
 
   return (
     <div
-      className={`w-72 h-screen text-slate-100 bg-primary dark:bg-dark ${menus} fixed top-0 left-0 z-10 overflow-hidden`}
+      className={`w-72 h-screen text-slate-100 bg-primary dark:bg-dark ${menus} transition-all duration-300 ease-in-out fixed top-0 left-0 z-10 overflow-hidden`}
     >
       <div>
         <div className="flex flex-row py-5 cursor-default text-2xl text-dark dark:text-primary">
@@ -74,7 +74,7 @@ export default function Menu({ menuVisible }) {
           <svg
             onClick={() => {
               setMenu("hidden");
-              menuVisible(false);
+              menuVisible(!menuVisible);
             }}
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -97,12 +97,12 @@ export default function Menu({ menuVisible }) {
             {/* Tombol untuk Dark Mode */}
             <div
               onClick={toggleDarkMode}
-              className={`group w-full py-4 text-white hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all ease-in-out duration-300 cursor-pointer ${
+              className={`group w-full py-4 text-white hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all ease-in-out duration-100 cursor-pointer ${
                 dark ? "bg-transparent" : "bg-transparent"
               }`}
             >
               {dark ? (
-                <div className="flex flex-row items-center transition-all duration-300 ease-in-out group-hover:translate-x-2">
+                <div className="flex flex-row items-center transition-all duration-100 ease-in-out group-hover:translate-x-2">
                   <p className="basis-1/6 text-center">
                     <FontAwesomeIcon icon={faMoon} />
                   </p>
@@ -110,7 +110,7 @@ export default function Menu({ menuVisible }) {
                   <p className="basis-5/6">Dark</p>
                 </div>
               ) : (
-                <div className="flex items-center flex-row transition-all duration-300 ease-in-out group-hover:translate-x-2">
+                <div className="flex items-center flex-row transition-all duration-100 ease-in-out group-hover:translate-x-2">
                   <p className="basis-1/6 text-center">
                     <FontAwesomeIcon icon={faSun} />
                   </p>
@@ -120,24 +120,24 @@ export default function Menu({ menuVisible }) {
               )}
             </div>
           </div>
-          <div className="group flex flex-row py-4 cursor-pointer hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all duration-300">
-            <p className="basis-1/6 text-center transition-all duration-300 ease-in-out group-hover:translate-x-2">
+          <div className="group flex flex-row py-4 cursor-pointer hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all duration-100">
+            <p className="basis-1/6 text-center transition-all duration-100 ease-in-out group-hover:translate-x-2">
               <FontAwesomeIcon icon={faList} />
             </p>
             <Link
               href="/"
-              className="basis-5/6 transition-all duration-300 ease-in-out group-hover:translate-x-2"
+              className="basis-5/6 transition-all duration-100 ease-in-out group-hover:translate-x-2"
             >
               Dashboard
             </Link>
           </div>
-          <div className="group flex flex-row items-center py-4 cursor-pointer hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all duration-300">
-            <p className="basis-1/6 text-center transition-all duration-300 ease-in-out group-hover:translate-x-2">
+          <div className="group flex flex-row items-center py-4 cursor-pointer hover:bg-dark hover:text-primary dark:hover:bg-primary dark:hover:text-dark transition-all duration-100">
+            <p className="basis-1/6 text-center transition-all duration-100 ease-in-out group-hover:translate-x-2">
               <FontAwesomeIcon icon={faCompass} />
             </p>
             <Link
               href="/list"
-              className="basis-1/6 transition-all duration-300 ease-in-out group-hover:translate-x-2"
+              className="basis-1/6 transition-all duration-100 ease-in-out group-hover:translate-x-2"
             >
               Maps
             </Link>
@@ -145,7 +145,7 @@ export default function Menu({ menuVisible }) {
               id="theme"
               value={theme}
               onChange={handleThemeChange}
-              className=" ease-in-out group-hover:translate-x-2 w-full py-2 px-3 bg-transparent dark:bg-transparent transition-all duration-300 text-white basis-4/6  outline-none border-none focus:ring-0 appearance-none"
+              className=" ease-in-out group-hover:translate-x-2 w-full py-2 px-3 bg-transparent dark:bg-transparent transition-all duration-100 text-white basis-4/6  outline-none border-none focus:ring-0 appearance-none"
             >
               {themes.map((theme, i) => (
                 <option

@@ -17,7 +17,7 @@ export default function Map (props) {
   return (
     <div
       style={{ width: "100%", height: "100vh" }}
-      className={`w-auto h-auto flex bg-[#f2efe9]  ${
+      className={`w-auto h-auto flex bg-[#f2efe9] transition-all duration-300 ease-in-out ${
         menuVisible ? marginClass : "pl-0"
       }`}
     >
