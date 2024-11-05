@@ -5,6 +5,7 @@ import Input from "@components/ui/input";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 export default function LoginView() {
   const [visible, setVisible] = useState(false);
@@ -57,7 +58,7 @@ export default function LoginView() {
         </div>
 
         <Button type="submit" variant="bg-gray-800 w-full">
-          Login
+          <Link href="/dashboard">Login</Link>
         </Button>
 
         <hr className="my-5" />
