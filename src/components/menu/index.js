@@ -125,7 +125,7 @@ export default function Menu({ menuVisible }) {
               <FontAwesomeIcon icon={faList} />
             </p>
             <Link
-              href="/"
+              href="/dashboard"
               className="basis-5/6 transition-all duration-100 ease-in-out group-hover:translate-x-2"
             >
               Dashboard
